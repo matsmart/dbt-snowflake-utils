@@ -96,6 +96,11 @@
 -- Otherwise it returns False
 #}
 {% macro model_contains_tag_meta(model_node) %}
+    {% if not model_node.meta %}
+        {# SavedQuery does not support the meta attribute! #}
+        {{ return(False) }}
+	{% endif %}
+
 	{% if model_node.meta.database_tags %}
         {{ return(True) }}
 	{% endif %}
