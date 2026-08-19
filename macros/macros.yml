@@ -46,7 +46,7 @@ macros:
     arguments:
       - name: schema_name
         description: Schema to drop
-      - name: database
+      - name: database_name
         description: "[Optional] Database name. Defaults to target database."
 
   - name: grant_ownership_on_schema_objects
